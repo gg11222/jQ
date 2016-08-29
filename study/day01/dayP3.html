@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <div id = 'div-box'>
+    	<div class="myclass"></div>
+    </div>
+	<script type="text/javascript" src='../lib/common.js'></script>
+	<script type="text/javascript">
+	//节点查询各方式的性能速度
+		$(function(){
+              
+              document.getElementsByClassName('myclass');
+              $('.myclass');
+              //最快的速度，以父级id的方式
+              $('#div-box .myclass');
+              //补充最快的方式
+              var $el = $('#div-box');
+              var $child = $('.myclass',$el);//$('.class',父级)
+              //相比id慢一级
+              $('div.myclass');
+              //最慢的
+              $('.myclass');
+		});
+	</script>
+</body>
+</html>

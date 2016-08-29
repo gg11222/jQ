@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		*{margin: 0;padding:0}
+		ul{width: 200px;margin: 0px auto;text-align: center;}
+		ul>li{display: inline-block;margin: 10px;}
+		.active{background-color: red;}
+		div{display: none;width: 200px;margin: 0px auto;text-align: center;border: 1px solid black;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+	</ul>
+     <div>11111</div>
+     <div>22222</div>
+     <div>33333</div>
+	<script type="text/javascript" src="../lib/common.js"></script>
+	<script type="text/javascript">
+		$(function(){
+             $('ul').on('click','li',function(e){
+             	var index = $(e.currentTarget).index();
+             	// console.log(typeof($(e.currentTarget).index()));
+             	$('li:eq('+index+')').addClass('active').siblings().removeClass('active');
+             	$('div:eq('+index+')').show().siblings().hide();
+             	$('ul').show();
+             })});
+	</script>
+</body>
+</html>

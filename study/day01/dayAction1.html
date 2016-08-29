@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="div-box">
+    <div id = 'div-box1'>
+    	id 为div-box1的节点
+    </div>
+    <div id = 'div-box2'>
+    	id 为div-box2的节点
+    </div><div id = 'div-box3'>
+    	id 为div-box3的节点
+    </div>
+ </div>
+	<script src="../lib/common.js" type="text/javascript" ></script>
+	<script>
+		$(function(){
+
+          //给获取到的节点对象增加class
+          $('#div-box').addClass('active');
+          //去掉class
+          $('#div-box').removeClass('active');
+          $('#div-box').toggleClass('active');
+
+          //设置display为none
+          $('#div-box').hide();
+          //显示节点对象
+          $('#div-box').show();
+          //显示的节点隐藏，隐藏的节点显示
+          $('#div-box').toggle();
+
+          // $('#div-box').toggle(false) == $('#div-box').hide();
+
+          // $('#div-box div');
+
+          // 获取集合中第一个节点
+          $('#div-box div').first();
+          $('#div-box div:eq(0)');//eq(元素集合下标)
+          $('#div-box div').last();
+          
+          //获取同级别的其他节点对象
+          //$('').siblings()
+          
+          //对集合中第一个节点增加class，然后操作同级别的其他节点
+          $('#div-box div').first().addClass('firstclass').siblings().addClass('otherclass');
+
+		});//最后加分号 方便js文件合并
+	</script>
+</body>
+</html>

@@ -30,7 +30,9 @@
 	$(function(){
 		$('.demo01').on('click','.navTable span',function(e){
 			$(e.currentTarget).addClass('active').siblings().removeClass('active');
+
 			$('.' + $(e.currentTarget).data('type') ).show().siblings().hide();
+			//.data() 从标签中取值
 		});
 	})
 </script>
