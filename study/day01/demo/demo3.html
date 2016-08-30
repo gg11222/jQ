@@ -3,17 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style type="text/css" media="screen">
+		div{width: 100px;height: 100px;background-color: red;}
+	</style>
 </head>
 <body>
  <button type="button" style='display: block'>11</button>
-	<img src="../788a887607adb17fa0628e96f89881f2.jpg" alt="">
+	<div>
+		
+	</div>
 	<script type="text/javascript" src="../../lib/common.js"></script>
 	<script type="text/javascript">
 		$(function(){
            $('button').on('click',function(){
-           	 $('img').toggle('1111',function(){alert('complete')});
+           	 $('div').fadeToggle('1111',function(){alert('complete')});
            })
-		});//hide() show() toggle
+		});//fadeIn fadeOut fadeToggle
 	</script>
 </body>
 </html>

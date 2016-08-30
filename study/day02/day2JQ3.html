@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul class="class-ul">
+		<li>0</li>
+		<li>1</li>
+		<li>2</li>
+		<li>3<br></li>
+		<li>4</li>
+	</ul>
+	<ul class="class-ul">
+		<li>0</li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li></li>
+	</ul>
+	<script type="text/javascript" src = '../lib/common.js'></script>
+	<script type="text/javascript">
+		$(function(){
+			// $('ul li:first')   第一个ul的第一个li
+			// $('ul li').first()
+			$('ul li:first').css(
+				{
+					color:'red',
+					background:'green',
+					listStyle:'none'
+				}
+				);
+			$('ul li:first-child').css(//每一个ul的第一个li
+				{
+					color:'red',
+					background:'green',
+					listStyle:'none'
+				}
+				);
+			$('ul li').first().css(//第一个ul的第一个li
+				{
+					color:'red',
+					background:'green',
+					listStyle:'none'
+				}
+				);
+			//最后一个
+			$('ul li:last').css(
+			{
+				color:'green',
+				background:'red',
+				listStyle:'none'         
+			}
+			);
+			//从0开始奇数个
+            $('ul li:odd').css(
+            {
+                color:'green',
+				background:'pink',
+				
+            }
+            );
+            //从0开始 偶数个
+            $('ul li:even').css(
+            {
+                color:'green',
+				background:'gray',
+				
+            }
+            );
+           //gt大于   lt小于
+            $('ul li:gt(1)').css(//下标大于1的
+            {
+                color:'green',
+				background:'black',
+				
+            }
+            );
+            //:has 所有包含有 <p> 元素在其内的 <div> 元素
+            $('ul li:has(br)').css('background','white');
+            
+            //:contains(text)  选取包含指定字符串的元素
+            $('ul li:contains(1)').css('background','blue');
+
+            //:empty	选取空的元素
+            $(":empty") //选取所有空的元素
+
+            $('li:empty').css('background','orange').text('之前是空的');
+
+            //:hidden 获取隐藏的元素
+            $('ul li').first().hide();
+            $('ul li:hidden()').show();
+
+            //visible 获取可见的元素
+
+            //:not() 获取集合中非selector元素
+            // $('ul li:not(:eq(3))')
+            // $('ul li:not(.myclass)')
+
+            //.is(selector)用来判断是否是selector 返回true or false
+		});
+	</script>
+</body>
+</html>	

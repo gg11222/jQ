@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <p class="myclass">节点p</p>
+    <div class = 'outer' data-userName='zhangsan'>
+  	  	<div class="inner">
+    		<input type="password" name="">
+    	</div>
+    </div>
+	<script type="text/javascript" src = '../lib/common.js'></script>
+	<script type="text/javascript">
+		$(function(){
+			// $('p.myclass').empty();//置空元素
+			// $('p.myclass').html('');//元素内部赋值为空字符串
+
+			//clone() 复制节点
+			//clone(ture)  复制节点及上面绑定的事件
+			var p = $('p.myclass').clone().addClass('ppppp');
+			$('body').append(p);	
+			p.click(function(e){
+				alert('2');
+			});
+
+			//replaceWith()
+			//替换节点，直接把当前操作对象覆盖
+			// $('p.ppppp').replaceWith('<li>wwwwwww</li>');
+
+			//wrap()把元素包裹起来
+			$('p.ppppp').wrap('<div class="itswrap"></div>');
+
+			//hasClass()
+			//判断是否含有某个class 返回true||false
+
+			//each(index,item)  遍历函数(下标，元素对象)
+			$('p').each(function(index,item){
+				if($(item).hasClass('ppppp')){
+					console.log('true');
+				}
+				else{
+					console.log('false');
+				}
+			})
+            
+            //常用于表单验证，
+           $('input:password').focus();
+
+           //.next() 元素后面的一个元素
+           // console.log($('p.myclass:eq(0)').next().attr('type'));
+           //.prev() 元素的前面一个元素
+           // console.log( $('input:password').prev().html());
+
+           //closest() 向元素上级查找，找到最近的一个
+           var username = $('input:password').closest('.outer').data('username');
+           console.log(username);
+
+           //parent() 直接父元素 parents()所有父元素的集合
+          
+           //find() 在集合中过滤
+           //.parents('.class')在父元素中查找符合条件的节点
+
+           //$('p.myclass').trigger('awwww');
+           $(document).on('awwww','p.myclass',function(e,data){//参数(默认事件，自定义参数)
+           	alert('trigger success'+data.name);
+           });
+
+		});
+	</script>
+</body>
+</html>
